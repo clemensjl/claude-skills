@@ -6,3 +6,13 @@ Thumbs.db
 .env.*
 skills-lock.json
 .claude/
+.playwright-mcp/
+VERIFICATION-PASS.md
+
+# Recherche-Rohdaten (Gesetzestexte, Behoerden-Dumps) - nicht versionieren
+/*.pdf
+/*.html
+/*.txt
+/skills/*.pdf
+/skills/*.html
+/skills/*.txt

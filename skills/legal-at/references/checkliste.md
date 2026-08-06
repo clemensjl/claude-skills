@@ -72,7 +72,9 @@ Diese vier Schritte liefern die Hälfte aller Befunde und dauern zusammen wenige
 - [ ] Rücksendekosten geregelt und erwähnt, falls der Verbraucher sie tragen soll
 - [ ] Bei digitalen Inhalten mit Sofortzugang: beide Bestätigungen nach § 18 Abs 1 Z 11 als getrennte, nicht vorangekreuzte Checkboxen, mit Zeitstempel gespeichert
 - [ ] Keine erfundenen Einschränkungen ("nur ungeöffnet", "nur Originalverpackung")
-- [ ] Widerrufsbutton nach § 13a FAGG gebaut oder terminiert (Pflicht ab 01.10.2026 laut WKO; Richtlinienstichtag 19.06.2026) — eigene Widerrufsseite, Footer-Link, ohne Login erreichbar, getrennte Bestätigungsschaltfläche, Empfangsbestätigung mit Datum und Uhrzeit
+- [ ] Rücktrittsfunktion nach § 13a FAGG gebaut oder terminiert — **Pflicht ab 01.10.2026 für Verträge, die nach dem 30.09.2026 geschlossen werden** (§ 20 Abs 5 FAGG idF BGBl I 59/2026). Eigene Widerrufsseite, Footer-Link, ohne Login erreichbar, Bestätigungsschaltfläche ausschließlich mit „Widerruf bestätigen" beschriftet, Empfangsbestätigung auf dauerhaftem Datenträger mit Inhalt, Datum und Uhrzeit
+- [ ] Verkauf auch nach DE oder FR? Dort gilt die Funktion bereits seit 19.06.2026 — dann nach dem früheren Datum bauen
+- [ ] Harmonisierte Gewährleistungs-Mitteilung (Anhang II FAGG) und Haltbarkeitsgarantie-Kennzeichnung (Anhang III FAGG) ab **27.09.2026** eingebaut, § 5a Abs 1 Z 5 und Z 5a KSchG
 - [ ] Kein Kündigungsbutton nach deutschem § 312k BGB behauptet oder eingebaut
 
 ## Gewährleistung

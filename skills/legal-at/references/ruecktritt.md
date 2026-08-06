@@ -49,25 +49,25 @@ Kein Rücktrittsrecht besteht bei Verträgen über:
 
 ## § 13a FAGG — Widerrufsbutton (neu 2026)
 
-Eingeführt durch das Verbraucherrechts-Änderungsgesetz 2026, Umsetzung der Richtlinie (EU) 2023/2673. **Neben** der Belehrung und dem Muster-Formular, nicht statt.
+Eingeführt durch das **Verbraucherrechts-Änderungsgesetz 2026, BGBl I Nr 59/2026, ausgegeben am 28.07.2026**, Umsetzung der Richtlinie (EU) 2023/2673. **Neben** der Belehrung und dem Muster-Formular, nicht statt.
 
-**Zeitpunkt — Quellen weichen ab, beide Daten prüfen:**
-- WKO: verpflichtend ab **01.10.2026** für Verträge, die nach dem 30.09.2026 geschlossen werden
-- andere Fachquellen: Geltung für Verträge ab **19.06.2026** (Datum der Richtlinienanwendbarkeit)
+**Zeitpunkt — geklärt, die abweichende Angabe war falsch.** § 20 Abs 5 FAGG in der Fassung BGBl I 59/2026: § 13a samt Überschrift tritt **mit 1. Oktober 2026** in Kraft und ist auf Verträge anzuwenden, **die nach dem 30. September 2026 geschlossen werden**. Das im Umlauf befindliche Datum 19.06.2026 ist der Anwendungsstichtag der Richtlinie, nicht der österreichische Stichtag; Österreich hat später umgesetzt. Gegenprobe: die konsolidierte Fassung im RIS enthält am 05.08.2026 noch keinen § 13a — die Bestimmung steht bis dahin nur im Bundesgesetzblatt.
 
-Sichere Lesart: Funktion bis 01.10.2026 fertig gebaut haben. Vor dem Bau den aktuellen Gesetzestext im RIS gegenprüfen — dieser Punkt ist neu und die Sekundärquellen sind uneinheitlich.
+Praktische Folge für ein Projekt, das nach Deutschland und Frankreich mitverkauft: dort gilt die Funktion schon seit 19.06.2026 (§ 356a BGB, art. L221-21 al. 3 C. consom.). Wer grenzüberschreitend verkauft, baut nach dem frühesten Datum, nicht nach dem österreichischen.
 
-**Anwendungsbereich:** alle über eine Online-Schnittstelle geschlossenen Verbraucherverträge — Webshops, Apps, Plattformen, Spielkonsolen. Nicht erfasst sind Fernabsatzverträge, die ausschließlich über Individualkommunikation zustande kommen (Telefon, individuelle E-Mail).
+**Anwendungsbereich:** Fernabsatzverträge, die **über eine Online-Benutzeroberfläche** geschlossen werden (§ 13a Abs 1) — Webshops, Apps, Plattformen. Nicht erfasst sind Fernabsatzverträge, die ausschließlich über Individualkommunikation zustande kommen (Telefon, individuelle E-Mail).
 
-**Anforderungen:**
-- Beschriftung "Vertrag widerrufen" oder gleichwertig eindeutig, etwa "Vom Vertrag zurücktreten"
-- leicht zugänglich und hervorgehoben durch Farbe, Rahmen, Kontrast oder Schriftgröße
-- durchgehend während der gesamten Rücktrittsfrist erreichbar
-- ohne Login und ohne App-Download erreichbar, wenn der Vertrag nicht über die App geschlossen wurde
-- übliche Platzierung: eigene Widerrufsseite plus auffälliger Footer-Link
-- Eingabemöglichkeit für Name, Angaben zur Identifizierung des Vertrags und ein elektronisches Kontaktmittel für die Empfangsbestätigung
-- getrennte Bestätigungsschaltfläche "Widerruf bestätigen"
-- unverzügliche Empfangsbestätigung auf dauerhaftem Datenträger mit Inhalt der Erklärung, Datum und Uhrzeit
+**Anforderungen, Wortlaut BGBl I 59/2026:**
+
+- **Abs 2** — die Rücktrittsfunktion ist *"gut lesbar mit den Worten ‚Vertrag widerrufen' oder einer entsprechenden eindeutigen Formulierung zu kennzeichnen, während der gesamten Rücktrittsfrist durchgehend verfügbar zu halten und auf der Online-Benutzeroberfläche hervorgehoben und für Verbraucher leicht zugänglich zu platzieren"*.
+- **Abs 3** — die Funktion muss die Versendung einer Online-Rücktrittserklärung ermöglichen; der Verbraucher muss ohne Weiteres bereitstellen oder bestätigen können: 1. seinen Namen; 2. Angaben zur Identifizierung des Vertrags; 3. Angaben zum elektronischen Kommunikationsmittel, über das die Eingangsbestätigung übermittelt werden soll.
+- **Abs 4** — getrennte Bestätigungsfunktion, *"gut lesbar und **ausschließlich** mit den Worten ‚Widerruf bestätigen' oder einer entsprechenden eindeutigen Formulierung gekennzeichnet"*. Das „ausschließlich" steht im Gesetz: keine Zusatzbeschriftung auf derselben Schaltfläche.
+- **Abs 5** — unverzüglich eine Eingangsbestätigung auf dauerhaftem Datenträger, die **unter anderem den Inhalt der Rücktrittserklärung sowie Datum und Uhrzeit ihres Eingangs** enthält.
+- **Abs 6** — die Frist ist gewahrt, wenn die Online-Rücktrittserklärung vor Fristablauf abgegeben wurde. Der Zeitstempel ist damit Beweismittel, nicht Komfort: serverseitig protokollieren.
+
+Nicht im Gesetzestext, aber praktisch: eigene Widerrufsseite plus auffälliger Footer-Link, ohne Login erreichbar. „Leicht zugänglich" und „durchgehend verfügbar" tragen das; eine Funktion hinter dem Kundenkonto ist es für den nicht eingeloggten Verbraucher nicht.
+
+**Zwei weitere Stichtage aus demselben Gesetz, nicht verwechseln.** § 20 Abs 6 FAGG: § 3 Z 16 bis 20, § 4 Abs 1 Z 7, Z 12, Z 12a bis 12d sowie Z 20 und 21, § 8 Abs 1 und die **Anhänge II und III** treten mit **27.09.2026** in Kraft, anzuwenden auf Verträge ab 27.09.2026. Das ist die Umsetzung der Richtlinie (EU) 2024/825 (Green Claims / Empowering Consumers) samt harmonisierter Gewährleistungs-Mitteilung nach Anhang II und Haltbarkeitsgarantie-Kennzeichnung nach Anhang III, auf die § 5a Abs 1 Z 5 und Z 5a KSchG verweisen.
 
 ## Muster-Widerrufsformular (Anhang I Teil B FAGG)
 

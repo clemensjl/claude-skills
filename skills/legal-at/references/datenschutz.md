@@ -64,6 +64,14 @@ Speicherfristen, die praktisch immer auftauchen: Rechnungen und Belege 7 Jahre (
 
 Jeder US-Dienst ist eine Drittlandübermittlung, auch wenn ein EU-Rechenzentrum gewählt wurde, sobald Zugriff aus den USA möglich ist. Anzugeben sind: Empfänger, Zielland, Grundlage. Für die USA kommt der Angemessenheitsbeschluss zum EU-US Data Privacy Framework nur in Betracht, wenn der konkrete Anbieter zertifiziert ist — das ist zu prüfen und nicht zu unterstellen. Sonst Standardvertragsklauseln plus Transfer Impact Assessment.
 
+**DPF allein trägt seit 29.06.2026 nicht mehr.** An diesem Tag entschied der US Supreme Court in *Trump v. Slaughter*, dass der Kündigungsschutz der FTC-Commissioner verfassungswidrig ist — die FTC kann nicht unabhängig sein. Der Durchführungsbeschluss (EU) 2023/1795 stützt sich auf genau diese Unabhängigkeit: die FTC ist die Aufsichts- und Durchsetzungsbehörde für die DPF-Grundsätze, und unabhängige Aufsicht ist Tatbestandsmerkmal des Art 45 Abs 2 lit b DSGVO. Stand 05.08.2026: noyb hat am 29.06.2026 die Aufhebung beantragt und eine Nichtigkeitsklage angekündigt (nicht bestätigt eingebracht), der EDSA hat am 31.07.2026 die Kommission zur Prüfung aufgefordert, die Kommission hat **nicht** reagiert.
+
+Daraus folgt für die Praxis, nicht für den Text der Erklärung:
+
+- Der Beschluss **gilt** bis zur Aufhebung durch die Kommission oder Nichtigerklärung durch den EuGH. „Das DPF ist gefallen" ist falsch und in einer Datenschutzerklärung ein eigener Fehler.
+- Wer sich allein auf DPF stützt, braucht einen **dokumentierten SCC-Fallback** nach Art 46 Abs 2 lit c DSGVO plus Transfer Impact Assessment. Das TIA muss Aufsicht und Rechtsschutz ansprechen — genau die Punkte, die das Urteil schwächt.
+- In der Erklärung selbst bleibt es bei Empfänger, Zielland, Grundlage. Die Fallback-Konstruktion gehört ins Verarbeitungsverzeichnis und in den Auftragsverarbeitungsvertrag, nicht in den veröffentlichten Text.
+
 Häufige Kandidaten: Google (Analytics, Fonts, Maps, reCAPTCHA), Meta, Microsoft, Amazon Web Services, Cloudflare, Stripe, Mailchimp, OpenAI, Anthropic, Vercel, Supabase.
 
 ## Struktur der Erklärung
