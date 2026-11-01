@@ -69,6 +69,12 @@ Diese Skills schreiben keine Rechtstexte, sondern entscheiden, ob die Implementi
 | [steuer-at](./skills/steuer-at/SKILL.md) | Österreichische Rechnungs-, Beleg- und Registrierkassenpflichten, Kleinunternehmer, Leistungsort, RKSV |
 | [i18n-locale-correctness](./skills/i18n-locale-correctness/SKILL.md) | Namen, Adressen, Telefonnummern, Datum, Zahlen, Sortierung, Prüfsummen — ohne US-Annahmen |
 
+### Produktqualität
+
+| Skill | Zweck |
+|---|---|
+| [ux-details-audit](./skills/ux-details-audit/SKILL.md) | App oder Website auf 20 unsichtbare UX-Details prüfen (Skeletons, Optimistic Updates, Command Menu, Undo-Toasts, Safe Areas, Idempotency Keys und weitere) und die fehlenden priorisiert umsetzen, für Web, React/Next.js, Flutter und Electron |
+
 ## Warum das nicht aus dem Modellgedächtnis kommt
 
 Die Skills wurden gegen Primärquellen geschrieben, nicht gegen Erinnerung. Beim Bau hat sich in jeder einzelnen Rechtsordnung mindestens eine verbreitete Zitierung als veraltet erwiesen. Eine Auswahl:
