@@ -73,7 +73,7 @@ Deutsche Pflichten wirken plausibel und werden unter Zeitdruck erfunden. Keine d
 | Kündigungsbutton nach § 312k BGB für Abos | Existiert nicht. Es gibt seit 2026 den **Widerrufsbutton nach § 13a FAGG**, der etwas anderes regelt: die Ausübung des Rücktrittsrechts, nicht die Kündigung eines Dauerschuldverhältnisses. Nicht verwechseln. |
 | § 5 TMG Impressum | § 5 ECG, dazu §§ 24, 25 MedienG und § 14 UGB parallel |
 | § 55 RStV Verantwortlicher für den Inhalt | Kein Pendant; stattdessen Offenlegung nach § 25 MedienG |
-| Haftungsprivileg § 7 Abs 1 TMG | §§ 13 bis 19 ECG; für eigene Inhalte gibt es kein Privileg |
+| Haftungsprivileg § 7 Abs 1 TMG | **Kein 1:1-Pendant mehr.** Für eigene Inhalte gab es nie ein Privileg. Für reines Verlinken und für Suchmaschinen ist es seit 16.02.2024 vollständig entfallen: §§ 17–19 ECG (Linkhaftung, Suchmaschinenprivileg) wurden durch das DSA-Begleitgesetz, BGBl I 182/2023, aufgehoben. Rechtsfolge: dort gelten seither nur noch die allgemeinen zivil-/deliktsrechtlichen Haftungsregeln, kein ECG-Sonderprivileg. Für Hosting, Durchleitung und Caching greifen seit 17.02.2024 unmittelbar Art 4–6 DSA (VO (EU) 2022/2065) — der DSA deckt aber nur diese Vermittlerfälle ab, nicht das Setzen eigener kuratierter Links. Ob §§ 13–16 ECG daneben noch eigenständig fortgelten oder verdrängt sind: offene Prüffrage, nicht behauptet. |
 | Widerrufsrecht, Widerrufsbelehrung im Fließtext | Rücktrittsrecht, Rücktrittsbelehrung. Nur das Muster-Widerrufsformular heißt so, weil der Anhang aus der Richtlinie stammt. |
 | BDSG, § 38 BDSG Datenschutzbeauftragter ab 20 Personen | DSG; keine Schwelle nach Beschäftigtenzahl |
 | Einwilligungsalter 16 | 14 nach § 4 Abs 4 DSG |
