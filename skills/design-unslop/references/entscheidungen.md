@@ -1,0 +1,37 @@
+# Aufgelöste Widersprüche
+
+unslop und taste-skill verfolgen dasselbe Ziel, widersprechen sich aber im Einzelnen. Hier steht je Konflikt, was jede Quelle sagt, was dieser Skill entscheidet und warum. Die Entscheidung gilt in allen anderen Dateien.
+
+| # | Thema | unslop | taste-skill | Entscheidung | Grund |
+|---|---|---|---|---|---|
+| 1 | Geltungsbereich | Landing, Dashboards, Apps | ausdrücklich nicht für Dashboards, Tabellen, Produkt-UI | Zwei Modi: L mit taste-Regeln, A mit Design-System plus unslop-Durchgängen | unslops Durchgänge funktionieren auf App-UI, taste's Look nicht |
+| 2 | Icon-Set | Projektset, sonst lucide | lucide nur auf Wunsch, Phosphor, HugeIcons, Radix, Tabler bevorzugt | Projektset zuerst; shadcn-Projekte behalten lucide (shadcn-Default); neu gewählt Phosphor oder Tabler | Ein zweites Set neben dem vorhandenen verletzt beide Quellen ("eine Familie") |
+| 3 | Inter | als Option für präzise, technische Produkte | als Default verpönt | Inter in Modus A, bei neutralem, Linear-artigem oder Barrierefreiheits-Brief und als Markenschrift; auf Landing Pages sonst nicht | taste ist für Landing Pages spezifischer, unslop für Apps |
+| 4 | Serif | Instrument Serif, Fraunces, Newsreader für Headlines | Fraunces und Instrument Serif als Default verboten, Serif stark eingeschränkt | Beide aus den Defaults gestrichen; Serif nur bei echtem Editorial- oder Heritage-Charakter, aus rotierendem Pool | taste hat das als häufigstes Merkmal in Produktionstests gemessen |
+| 5 | Kursiv | nie zur Betonung | Betonung in Headlines per Kursiv oder Fett derselben Familie | Fließtext und Labels nie kursiv; Display-Headlines nur bei Editorial-Charakter, mit Unterlängen-Reserve | Beide wollen keine Mischfamilien; Kursiv in Labels ist eindeutiges Slop-Signal |
+| 6 | Gewichte | 400/500, 600 selten, nie 700 bis 900 | Hierarchie über Gewicht und Farbe statt Größe | 400 bis 600, Hierarchie über Größe und Farbe, aber Hero-Größe gedeckelt (taste's Font-Scale-Regel) | unslop verbietet schwere Gewichte, taste verbietet schreiende Größen; beides zusammen ist widerspruchsfrei |
+| 7 | Bewegung allgemein | eine Kurve, kein `transition-all`, keine Springs, höchstens ein Einstieg | Dial-Baseline 6, `transition: all 0.3s` bei Stufe 4 bis 7, Spring-Physik für Dauer-Mikroanimationen | unslops Regeln gelten immer; der Dial bestimmt nur die Menge motivierter Bewegung. MOTION-Presets eine bis zwei Stufen niedriger | taste's eigene Regel "Motion must be motivated" widerspricht seinen Defaults; `transition-all` ist ein Performance- und Slop-Signal |
+| 8 | Easing | `cubic-bezier(0.22, 1, 0.36, 1)` | `cubic-bezier(0.16, 1, 0.3, 1)` | eine Kurve pro Projekt, Default unslops | Praktisch gleiche Ease-out-Kurve, Hauptsache eine |
+| 9 | Dauer-Animationen | raus, außer bei echtem Live-Zustand | erlaubt ab MOTION 6 bei "AI-feel", Status, Live-Feeds | nur für echten Live-Zustand und Skeletons beim Laden | "AI-feel" ist genau das, was entfernt werden soll |
+| 10 | Produktvorschau im Hero | in Code bauen, mit Projektkomponenten und plausiblen Daten | Div-basierte Fake-UI ist Merkmal Nr. 1, erlaubt ist "echte Komponentenvorschau" | Echte Mini-Komponente aus dem Projekt erlaubt; Div-Rechtecke, Fake-Terminals, Versionsfooter verboten | Beide meinen dasselbe Gute; taste verbietet die schlechte Ausführung, nicht das Prinzip |
+| 11 | Bilder ohne Generator | leerer Slot ohne Text, Prompt in den Bericht | picsum-Platzhalter, sonst beschriftete TODO-Slots | leerer Slot ohne Text, Prompt in den Bericht; picsum nur für lokale Entwürfe | Beschriftete Platzhalter gehen erfahrungsgemäß live |
+| 12 | Bildgenerierung | Prompt zeigen, vor jeder kostenpflichtigen Generierung fragen | Tool verpflichtend nutzen, wenn vorhanden | Tool nutzen, aber vorher Prompt, Modell, Größe zeigen und fragen | Kosten für den Nutzer; Fragen kostet einen Turn |
+| 13 | Anzahl Bilder | ein Visual, meist nur im Hero; Visual auf jedem Abschnitt ist Slop | auch minimalistische Seiten brauchen zwei bis drei echte Bilder | Hero plus ein bis zwei tragende Bilder, nie eins pro Abschnitt | Mittelweg; beide Extreme sind belegte Fehlerbilder |
+| 14 | Hero-Abstand oben | 96 bis 128 von Navigation zur Headline | höchstens `pt-24` (96px) | 64 bis 96 | taste's Grenze ist als Messfehler belegt (Inhalt schwebt) |
+| 15 | Hero-Headline-Größe | 56 bis 72 | `text-4xl md:text-5xl lg:text-6xl`, `text-7xl` nur bei drei bis fünf Wörtern | 48 bis 60, bis 72 nur bei drei bis fünf Wörtern | Die Größe hängt an der Wortzahl, das ist die genauere Regel |
+| 16 | Eyebrows, Versal-Labels | Satzschreibung überall | höchstens eins pro drei Abschnitte | beides: höchstens eins pro drei Abschnitte, in Satzschreibung | Keine echte Kollision, Regeln addieren sich |
+| 17 | Status-Punkte | als Signatur (Live-Punkt) und für Kategorien mit Farbe | null Deko-Punkte, nur echter Zustand, einer je Abschnitt | nur für echten Zustand; als Signatur nur, wenn das Produkt wirklich Live-Zustand hat | unslops Beispiele sind selbst echte Zustände |
+| 18 | Bento-Abwechslung | keine Hue-Verläufe, ruhige Chrome | zwei bis drei Zellen mit Bild, "markengerechtem Verlauf", Muster, Tönung | Abwechslung über echten Inhalt und Flächenstufen, kein Hue-Verlauf | taste's Verlaufsvorschlag öffnet die Tür, die unslop schließt |
+| 19 | Glass, Grain | Trends nicht gegeneinander tauschen | Glass für Premium-Consumer, Grain als fixiertes Pseudo-Element | nur auf ausdrücklichen Wunsch im Brief, nie als Ersatz für entfernte Deko | Unaufgefordert eingesetzt ist es der nächste Trend-Look |
+| 20 | Schatten | neutral, weich, klein | auf den Hintergrundton getönt | in der dunkelsten Stufe der (getönten) Rampe | erfüllt beides: neutral zur Seite, getönt mit ihr |
+| 21 | Hell und dunkel | keine Vorgabe | beide Modi Pflicht für Endkundenseiten | beide Modi für Endkundenseiten, außer das Projekt hat bewusst ein Theme | taste ergänzt, unslop widerspricht nicht |
+| 22 | Warm-Rampe hell (#f7f4ee) | Option für warme Welten | Creme-Familie (#f7f5f1 u. a.) für Premium-Consumer verboten | erlaubt bei echter Papier- oder Essenswelt, nicht als Premium-Consumer-Default, nie mit Messing-Akzent | Die Werte liegen fast aufeinander; der Kontext entscheidet |
+| 23 | Mock-Zahlen | plausibel, nie `[X]` | 9.D "organisch, unrund (47.2 %)" gegen 4.9 "erfundene Präzision verboten" | Apps: plausible unrunde Mock-Daten, markiert. Marketing: keine erfundenen Kennzahlen | taste widerspricht sich selbst; die Trennung nach Modus löst es |
+| 24 | Rückfragen | Audit und Richtung zeigen, auf Antwort warten | nur eine Frage bei echter Mehrdeutigkeit, sonst loslegen | Design-Read-Frage nur bei Mehrdeutigkeit (taste); Audit plus Richtung immer zur Freigabe (unslop), außer "mach einfach" | Verschiedene Zeitpunkte, beide sinnvoll |
+| 25 | Gedankenstriche | keine Regel | vollständig verboten | in sichtbarem UI-Text verboten; bewusster deutscher Bis-Strich in Kundentext bleibt | Schutz vor dem stärksten Text-Merkmal, ohne korrekte deutsche Typografie zu brechen |
+| 26 | Redesign "neu aufsetzen" | Polish- oder Vollmodus nach Audit | MOTION +2 | MOTION +1 | Folgt aus Punkt 7 |
+| 27 | Sichtprüfung | Playwright-Skripte (`snapshot.mjs`, Story-Video) | Lighthouse | agentfenster für Screenshots; Lighthouse bzw. `web-quality-audit` für Messwerte; Story-Video nicht übernommen | Arbeitsumgebung des Skill-Autors; Story-Video ist ein Social-Media-Extra |
+
+---
+
+Inhalte zusammengefasst aus unslop von Damir Sokolovsky ([@heydamir](https://x.com/heydamir)), CC BY 4.0, und aus taste-skill von Leonxlnx (MIT).

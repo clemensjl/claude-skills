@@ -73,7 +73,9 @@ Diese Skills schreiben keine Rechtstexte, sondern entscheiden, ob die Implementi
 
 | Skill | Zweck |
 |---|---|
+| [ux-regelwerk](./skills/ux-regelwerk/SKILL.md) | Ein verbindliches UX-Regelwerk mit Modus Bauen und Prüfen: prüfbare Regeln für Zustände, Formulare, Touch, Navigation, Laden, Leer- und Fehlerzustände, Barrierefreiheit, Motion und Texte, Gegenprüfung typischer KI-Fehler und Pflicht-Sichtprüfung, für Web, Expo/React Native und Flutter |
 | [ux-details-audit](./skills/ux-details-audit/SKILL.md) | App oder Website auf 20 unsichtbare UX-Details prüfen (Skeletons, Optimistic Updates, Command Menu, Undo-Toasts, Safe Areas, Idempotency Keys und weitere) und die fehlenden priorisiert umsetzen, für Web, React/Next.js, Flutter und Electron |
+| [design-unslop](./skills/design-unslop/SKILL.md) | KI-generierte Landing Pages, Dashboards und App-Screens entslopen: Merkmal-Katalog mit Suchmustern, Richtung und Dials, neun Durchgänge, Pre-Flight. Bearbeitung von [unslop](https://github.com/heydamir/unslop) (Damir Sokolovsky) und [taste-skill](https://github.com/Leonxlnx/taste-skill), daher CC BY 4.0 |
 
 ## Warum das nicht aus dem Modellgedächtnis kommt
 
