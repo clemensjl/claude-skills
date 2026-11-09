@@ -1,0 +1,30 @@
+name: Fehler im Inhalt
+description: Eine Norm, Frist, Summe oder Behördenangabe ist falsch, veraltet oder fehlt
+labels: ["bug"]
+body:
+  - type: input
+    id: skill
+    attributes:
+      label: Skill und Datei
+      placeholder: "legal-at, references/impressum.md"
+    validations:
+      required: true
+  - type: textarea
+    id: ist
+    attributes:
+      label: Was dort steht
+    validations:
+      required: true
+  - type: textarea
+    id: soll
+    attributes:
+      label: Was stimmt
+    validations:
+      required: true
+  - type: input
+    id: quelle
+    attributes:
+      label: Primärquelle
+      description: Link oder Fundstelle (Gesetz, Amtsblatt, Behördenseite)
+    validations:
+      required: true

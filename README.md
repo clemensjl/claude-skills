@@ -124,6 +124,10 @@ $EDITOR skills/mein-skill/SKILL.md
 npx skills@latest add . --list          # Erkennung prüfen
 ```
 
+## Beitragen
+
+Korrekturen am Rechtsstand und neue Skills sind willkommen, Hinweise in [CONTRIBUTING.md](./CONTRIBUTING.md).
+
 ## Lizenz
 
 MIT, siehe [LICENSE](./LICENSE).

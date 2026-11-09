@@ -1,0 +1,23 @@
+name: Neuer Skill oder neue Rechtsordnung
+description: Vorschlag für einen Skill, eine Rechtsordnung oder eine Erweiterung
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: vorschlag
+    attributes:
+      label: Was soll abgedeckt werden
+      description: Rechtsordnung oder Themenfeld und der konkrete Anwendungsfall
+    validations:
+      required: true
+  - type: textarea
+    id: luecke
+    attributes:
+      label: Was fehlt heute
+      description: Welche Antwort liefern die bestehenden Skills nicht oder falsch
+    validations:
+      required: true
+  - type: input
+    id: quellen
+    attributes:
+      label: Primärquellen
+      description: Wo der Rechtsstand nachzulesen ist (falls bekannt)
