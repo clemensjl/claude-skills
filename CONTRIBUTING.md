@@ -32,6 +32,6 @@ Ohne Primärquelle lässt sich eine Korrektur nicht prüfen.
 - Fehlende Angaben zum Projekt (Firmenbuchnummer, UID, Anschrift) nie plausibel ausfüllen, sondern als `[[FEHLT: …]]` beziehungsweise `[[MISSING: …]]` ausweisen.
 - Bei jeder geprüften Angabe den Stand (Datum der Prüfung) mitführen.
 - Der Entwurfs-Marker in erzeugten Rechtstexten bleibt, bis eine fachliche Freigabe vorliegt.
-- Sprache wie im jeweiligen Skill: `legal-at` und `steuer-at` auf Deutsch, die übrigen auf Englisch, Normbezeichnungen in der Originalsprache.
+- Sprache wie im jeweiligen Skill (vor dem Schreiben in dessen `SKILL.md` nachsehen), Normbezeichnungen in der Originalsprache.
 
 Mit dem Pull Request stimmst du zu, dass dein Beitrag unter der [MIT-Lizenz](./LICENSE) steht.
