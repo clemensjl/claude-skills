@@ -2,7 +2,7 @@
 
 Agent Skills von [Clemens Jele](https://github.com/clemensjl). Für Claude Code, Cursor, Codex und jeden Agenten, der das [Agent-Skills-Format](https://agentskills.io/specification) liest.
 
-Der Schwerpunkt liegt auf Dingen, bei denen es auf die Rechtsordnung, den Standort oder die konkrete Norm ankommt — also dort, wo generische Vorlagen aus dem englischsprachigen Raum nicht nur ungenau, sondern falsch sind.
+Zwei Bereiche: Rechtstexte und Compliance, wo es auf die Rechtsordnung, den Standort oder die konkrete Norm ankommt und generische Vorlagen aus dem englischsprachigen Raum nicht nur ungenau, sondern falsch sind. Und Produktqualität: Regeln und Prüfungen für UX, Design und die Details, an denen man merkt, ob eine App fertig ist.
 
 ## Installation
 
