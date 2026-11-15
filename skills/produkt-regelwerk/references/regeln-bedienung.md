@@ -1,8 +1,8 @@
-# Regelkatalog
+# Bedienbarkeit (Z, FO, T, N, L, E, A, M, X, Q)
 
 Jede Regel hat eine ID, eine prüfbare Bedingung und eine Quelle. "Prüfen" beschreibt, woran ein Befund festgemacht wird: eine Zahl, ein Selektor, ein Codemuster oder ein Testfall im laufenden Produkt. Stack-Umsetzung und Suchmuster für Web, React Native/Expo und Flutter stehen in `stacks.md`.
 
-Quellenkürzel am Ende der Datei. Wo zwei Quellen sich widersprechen, gilt die hier formulierte Regel; die Begründung steht in `widersprueche.md` unter der genannten Nummer (W1 bis W15).
+Quellenkürzel in `quellen.md`. Wo zwei Quellen sich widersprechen, gilt die hier formulierte Regel; die Begründung steht in `widersprueche.md` unter der genannten Nummer.
 
 Schweregrad je Regel (für das Befundformat im PRÜFEN-Modus):
 - **K** kritisch: Nutzer scheitert, verliert Daten, bucht doppelt oder ist ausgeschlossen (Tastatur, Screenreader).
@@ -32,7 +32,8 @@ Quelle: UDA 2, R24.
 
 **Z5 (H) Umkehrbares Löschen: Undo statt Bestätigungsdialog. Unumkehrbares: Dialog mit benannter Aktion.** Undo-Toast mindestens 5 s, pausiert bei Hover/Fokus, Löschung wird bis Ablauf zurückgehalten oder als Soft Delete umgesetzt. Dialog-Button heißt wie die Aktion ("Konto löschen"), nicht "OK"/"Ja" (W2).
 Prüfen: `confirm(`, `Alert.alert` oder `AlertDialog` vor umkehrbarer Aktion ist ein Befund; ebenso Löschen ganz ohne Schutz.
-Quelle: UDA 5, APL §16 Agency, WIG Navigation.
+Dialoge selbst: Titel ist die konkrete Frage ("Fahrt stornieren?", nicht "Bist du sicher?"); Text ist ein Satz mit der Folge ("Es fällt eine Gebühr von 5 € an."); Buttons benennen beide Ausgänge ("Fahrt behalten" / "Fahrt stornieren"), nie "OK"/"Abbrechen", wenn "Abbrechen" doppeldeutig ist; destruktive Aktion farblich als solche; gleichmäßiger Innenabstand ca. 24 px.
+Quelle: UDA 5, APL §16 Agency, WIG Navigation, R26.
 
 **Z6 (M) Zustandsänderung ist nicht nur Farbe.** Ausgewählt, aktiv, fehlerhaft, deaktiviert werden zusätzlich über Form, Icon, Text oder Gewicht unterschieden.
 Prüfen: Screenshot in Graustufen: Zustand noch erkennbar?
@@ -44,6 +45,13 @@ Quelle: R22, WIG Forms.
 **Z8 (N) Hover nur bei Geräten mit Hover.** Hover-Stile in `@media (hover: hover) and (pointer: fine)`; Touch bekommt Feedback über `:active`. Nichts Wichtiges ist nur per Hover erreichbar (Aktionen, Tooltips mit Pflichtinfo).
 Prüfen: Touch-Testfall: Gibt es Aktionen, die erst bei Hover erscheinen (`opacity-0 group-hover:opacity-100`)? Dann Befund **H**.
 Quelle: MN §1, EMIL, BU Environment.
+
+**Z9 (H) Jeder Button hat sechs Zustände: Ruhe, Hover (nur mit Zeiger, Z8), Fokus (A1), Gedrückt (Z1), Laden, Deaktiviert.** Ruhe-Zustand sieht klickbar aus (Fläche oder klare Kontur). Laden läuft im Button selbst (Spinner plus Verb, Breite bleibt gleich), nicht als Vollbild-Loader. Deaktiviert nur nach W1/Z7.
+Prüfen: Für jeden Button-Typ alle sechs Zustände im Stylesheet bzw. in der Komponente vorhanden; Screenshot je Zustand.
+Quelle: R31, R06.
+
+**Z10 (H) Antwort auf eine Aktion innerhalb von 400 ms** (Doherty-Schwelle), sonst Fortschritt zeigen (L1, Z2). Das Feedback selbst beginnt nach Z1 in 100 ms.
+Quelle: R32.
 
 ---
 
@@ -165,8 +173,14 @@ Quelle: WIG Navigation.
 **N6 (M) Konsistenz.** Gleiche Aktion, gleiches Label, gleicher Ort, gleiches Verhalten auf allen Screens.
 Quelle: APL §16 Familiarity, A11Y 3.2.3/3.2.4.
 
-**N7 (M) Onboarding: erster Erfolg ohne Umweg.** Kein Pflicht-Tutorial vor dem Kern; Touren höchstens 3 bis 5 Schritte, jederzeit überspringbar, nicht wiederholt.
+**N7 (M) Onboarding: erster Erfolg ohne Umweg.** Kein Pflicht-Tutorial vor dem Kern; Touren höchstens 3 bis 5 Schritte, jederzeit überspringbar, nicht automatisch wiederholt, aber manuell wieder aufrufbar (RT3).
 Quelle: ON.
+
+**N8 (M) Gewohnte Muster vor eigenen (Jakob's Law).** Warenkorb oben rechts, Logo links führt zur Startseite, Suche mit Lupe, Einstellungen mit Zahnrad, Plattform-Navigation (Tab-Bar unten auf iOS, Zurück-Geste und Predictive Back auf Android). Abweichung nur mit Grund.
+Quelle: R32, APL §16 Familiarity.
+
+**N9 (M) Inhalte in Häppchen (Chunking):** lange Formulare in Abschnitte oder Schritte, Zahlen gruppiert (IBAN, Telefon, Kartennummer in Blöcken), Listen mit Zwischenüberschriften. Keine starre "höchstens 7 Menüpunkte"-Regel (Mythos, `mythen.md`).
+Quelle: R32, NNG.
 
 ---
 
@@ -176,7 +190,7 @@ Quelle: ON.
 Prüfen: Netz drosseln, Screen öffnen: Spinner mitten im Inhalt (`ActivityIndicator`, `CircularProgressIndicator`, `<Spinner/>`) als einziger Ladezustand ist ein Befund. Layout-Sprung beim Eintreffen der Daten: Befund.
 Quelle: R01 (Skeleton), UDA 1, R24, BU States.
 
-**L2 (M) Unter ca. 200 ms nichts zeigen.** Ladeindikator erst nach Verzögerung oder mit Mindestdauer, damit nichts flackert.
+**L2 (M) Unter ca. 200 ms nichts zeigen.** Inhalts-Ladeindikatoren (Skeleton, Spinner) erst nach Verzögerung oder mit Mindestdauer, damit nichts flackert. Gedrückt-Zustand und Sperre (Z1, Z2) kommen trotzdem sofort; nur der Spinner im Button darf verzögert erscheinen.
 Quelle: UDA 1.
 
 **L3 (H) Bekanntes sofort zeigen (Stale-while-revalidate).** Zurücknavigieren zeigt die letzten Daten sofort und aktualisiert im Hintergrund; kein Ladezustand bei jedem Tab-Wechsel.
@@ -285,6 +299,12 @@ Quelle: EMIL, R10 (30 ms), MD.
 **M10 (H) Endlos- oder Autoplay-Bewegung über 5 s pausierbar,** nichts blinkt öfter als 3-mal pro Sekunde.
 Quelle: A11Y 2.2.2/2.3.1, WIG.
 
+**M11 (M) Was am Finger hängt, wird nicht getweent.** Drag, Slider, Sheet folgen dem Zeiger 1:1 ohne Easing; erst beim Loslassen übernimmt eine Spring mit der Wurfgeschwindigkeit. Über Grenzen hinaus Rubber-Band statt hartem Stopp; Slider-Griff darf sich beim Ziehen leicht strecken (ca. 12 %).
+Quelle: R10, APL §2/§3, EMIL.
+
+**M12 (N) Zustandswechsel lesbar machen:** Icons per Crossfade mit leichter Skalierung (0,9 bis 1) und Blur wechseln statt hart zu tauschen; Erfolg mit kurzem Puls bestätigen; geteilte Elemente zwischen Screens als Shared-Element- bzw. View-Transition. Marketing-Reveals unter 1 s, ganze Szenen knapp über 1 s; Produkt-UI bleibt bei M2.
+Quelle: R10, R34, W6.
+
 ---
 
 ## X. Texte und Mikrocopy
@@ -304,32 +324,38 @@ Quelle: WIG Content, A11Y 2.4.4.
 **X5 (N) Typografie:** typografische Anführungszeichen („…“), geschützte Leerzeichen zwischen Zahl und Einheit (`72&nbsp;kg`), Überschriften `text-wrap: balance`, Absätze `text-wrap: pretty`.
 Quelle: WIG Typography, UDA 17.
 
-**X6 (N) Keine Platzhalter-Reste:** kein "Lorem ipsum", kein "Vite + React" im Tab-Titel, kein Standard-Favicon, eigene 404-Seite.
-Quelle: Reel-Auswertung gruppe2 #30.
+**X6 (N) Keine Platzhalter-Reste:** kein "Lorem ipsum", kein "Vite + React" im Tab-Titel, kein Standard-Favicon, eigene 404-Seite (LA1 bis LA4).
+Quelle: R36, LA.
+
+**X7 (M) Kein Template-Ton:** Headlines und Buttons ohne "Revolutionize", "Supercharge", "Unlock", "All-in-one", "Seamless", keine Emoji als Icons, keine Funkel-Symbole. Konkrete Aussage statt Superlativ. Für das Aussehen siehe `design-unslop`.
+Quelle: globale Anti-Slop-Regel, WD19.
 
 ---
 
-## Quellen
+## Q. Quality of Life (Politur, die man erst merkt, wenn sie fehlt)
 
-| Kürzel | Quelle |
-|---|---|
-| UDA | `ux-details-audit` (Clemens), Nummer = Detail 1 bis 20 |
-| EMIL | `emil-design-eng` |
-| APL | `apple-design`, Paragrafennummer |
-| A11Y | `accessibility` und WCAG 2.2, Nummer = Erfolgskriterium |
-| WIG | Vercel Web Interface Guidelines (über `web-design-guidelines`), Abschnitt |
-| SU | `signup` |
-| ON | `onboarding` |
-| RA | `review-animations` (Standards 1 bis 10), `improve-animations` |
-| MD | `motion-design` (patterns/state-feedback, reference/timing-easing-tables) |
-| BU | `break-ui` und dessen `CATALOG.md` |
-| MN | `mobile-native`, Paragrafennummer |
-| R01 | Reel @mhmdnabdev: Skeleton statt Spinner |
-| R06 | Reel "10 UX Rules #1": jeden Tap sofort beantworten, Doppelbestellung |
-| R09 | Reel "5 Signup-Fehler": Label, Blur-Validierung, Submit springt, Autofill, inputmode |
-| R10 | Reel Animations-Timings |
-| R11 | Reel WCAG 2.2 Target Size (@Redcheck) |
-| R17 | Reel Hick's Law |
-| R20 | Reel Hit-Slop |
-| R22 | Reel "6 Formular-Regeln" |
-| R24 | Reel Speed-Checkliste |
+Vollständige Umsetzung je Detail in `ux-details-audit`, falls installiert. Hier die Mindestmenge.
+
+**Q1 (M) Optimistic Updates mit Rollback (Z4) und Stale-while-revalidate (L3)** für alles Häufige; Prefetch bzw. Pre-Rendering der wahrscheinlich nächsten Route (Hover/Viewport-Prefetch).
+Quelle: R35, UDA 2/6.
+
+**Q2 (M) Power-User-Wege in Web-Apps mit vielen Aktionen:** Befehlspalette (`Strg/⌘ + K`), sichtbare Tastenkürzel-Hinweise in Menüs und Tooltips, `/` fokussiert die Suche, `Esc` schließt.
+Quelle: R35, UDA.
+
+**Q3 (M) Verschachtelte Hover-Menüs mit Safe Triangle** (diagonale Mausbewegung zum Untermenü schließt es nicht), alternativ kurze Schließverzögerung (ca. 300 ms).
+Quelle: R35 (Amazon Mega-Menü).
+
+**Q4 (N) Kontinuierliche Ecken (Squircle) für große Radien** auf Apple-nahen Oberflächen (`corner-shape: squircle` mit Fallback bzw. SVG-Maske); innere Radien = äußerer Radius minus Abstand.
+Quelle: R30, R35, UDA.
+
+**Q5 (N) Listenende fühlt sich wie ein Ende an:** Overscroll-Bounce bzw. Glow nicht abschalten (außer W13-App-Shell), Ladeende sichtbar ("Alle 42 Einträge geladen").
+Quelle: R30.
+
+**Q6 (M) Einmalcodes per Autofill** (`autocomplete="one-time-code"`, Android SMS Retriever / iOS `textContentType="oneTimeCode"`), Code-Eingabe als ein Feld mit Einfügen, nicht sechs Einzelfelder ohne Paste.
+Quelle: R35, FO7, FO8.
+
+**Q7 (N) Bilder mit Platzhalter** (BlurHash/LQIP in Bildform) statt grauem Kasten oder Sprung (L5).
+Quelle: R35.
+
+**Q8 (M) Idempotency Keys für alles, was Geld kostet oder Daten anlegt** (Z2, CV21).
+Quelle: R35, UDA 19.
