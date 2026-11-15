@@ -1,6 +1,6 @@
 # Aufgelöste Widersprüche
 
-Die Quellen dieses Skills widersprechen sich an einigen Stellen. Hier steht jeweils, wer was sagt, was gilt und warum. Die Regel-IDs verweisen auf `regeln.md`.
+Die Quellen dieses Skills widersprechen sich an einigen Stellen. Hier steht jeweils, wer was sagt, was gilt und warum. Die Regel-IDs verweisen auf `regeln-bedienung.md`, `regeln-web.md`, `regeln-conversion.md`, `regeln-retention.md` und `verboten.md`.
 
 ---
 
@@ -41,7 +41,7 @@ Die Quellen dieses Skills widersprechen sich an einigen Stellen. Hier steht jewe
 **W7 Mindestgröße für Tap-Ziele.**
 - WCAG 2.2 SC 2.5.8 (AA), R11: 24 × 24 CSS-px oder ausreichender Abstand.
 - `ux-details-audit` 13, `signup`, Apple HIG: 44 pt. Material: 48 dp. WCAG 2.5.5 (AAA): 44 px.
-- **Gilt:** 44 pt (iOS, Web) bzw. 48 dp (Android) als Standard dieses Skills; 24 px ist die rechtliche Untergrenze und reicht nur bei dichten Desktop-Oberflächen mit Maus. Gemessen wird die Trefferfläche, nicht das Icon (R20).
+- **Gilt:** 44 pt (iOS, Web) bzw. 48 dp (Android) als Standard dieses Skills; 24 px ist die WCAG-AA-Untergrenze (rechtlich relevant, wo WCAG AA gefordert ist, z. B. über den European Accessibility Act) und reicht nur bei dichten Desktop-Oberflächen mit Maus. Gemessen wird die Trefferfläche, nicht das Icon (R20).
 
 **W8 Animation aus `scale(0)`.**
 - `motion-design` (Confirmation Badge): "scales from 0".
@@ -84,3 +84,26 @@ Die Quellen dieses Skills widersprechen sich an einigen Stellen. Hier steht jewe
 **W15 Title Case für Buttons.**
 - WIG: Title Case nach Chicago.
 - **Gilt:** nur für englische UI. Deutsche UI schreibt Buttons im Satzbau ("Mahlzeit speichern").
+
+**W16 Wie dunkel ist der Dark-Mode-Hintergrund?**
+- Reel R28: HSL-Lightness 8 %, Text 94 %. Material 2: `#121212` (ca. 7 %). R30: "dunkles Grau statt Schwarz".
+- **Gilt:** WD9. Die Werte sind gleichwertige Richtwerte im Bereich 6 bis 10 % Lightness; entscheidend ist, dass weder Fläche noch Text die Extremwerte nutzen und A4 erfüllt bleibt.
+
+**W17 Gratisversand-Balken immer oder nur nahe der Schwelle?**
+- Baymard: Gratisversand-Info in die Warenkorbsumme integrieren. Reel R38: Balken nur, wenn das Ziel nahe wirkt, sonst geben Nutzer auf.
+- **Gilt:** CV26. Die Info steht immer im Warenkorb; der motivierende Balken mit Artikelvorschlag erscheint erst ab erreichbarer Nähe.
+
+**W18 Bounce: verboten oder erwünscht?**
+- M8: Springs ohne Bounce für UI-Übergänge. R30, Q5: Bounce am Listenende ist ein wichtiges Signal.
+- **Gilt:** beides. M8 betrifft animierte Zustandswechsel, Q5 das Overscroll-Verhalten der Plattform. Kein Widerspruch, nur zwei Arten von Bewegung.
+
+**W19 "CTA above the fold" (R37) gegen "Nutzer scrollen" (NNG, Y2).**
+- **Gilt:** Der primäre CTA steht im ersten Screen und wiederholt sich unten (WD20); der Rest der Seite darf und soll scrollen (WD17). Die Fold ist kein Grund, Inhalte zu streichen.
+
+**W20 Exit-Umfrage bei der Kündigung: Pflicht oder optional?**
+- Recherche-Whitelist: eine Pflichtfrage ist zulässig. RT24/§ 1a UWG: Kündigung darf nicht von einer Antwort abhängen.
+- **Gilt:** Die Frage ist sichtbar, aber überspringbar ("Keine Angabe"), und "Kündigung bestätigen" ist ohne Antwort aktiv. Eine erzwungene Antwort ist ein nichtvertragliches Hindernis.
+
+**W21 Kundenauftrag gegen Verbotsliste.**
+- Auftrag z. B. "Kündigung so bauen, dass möglichst wenige kündigen", "Countdown für Dringlichkeit".
+- **Gilt:** `verboten.md` geht vor. Das Ziel des Auftrags wird mit erlaubten Mitteln verfolgt (RT-F, CV-C), das abgelehnte Muster wird im Antworttext beim Namen genannt.

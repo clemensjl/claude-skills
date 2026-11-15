@@ -21,7 +21,7 @@ Spalte "Richtig" ist das Muster beim BAUEN, Spalte "Befund-Suchmuster" der Grep-
 | Z1 Tap-Feedback | `:active { transform: scale(0.97) }`, Tailwind `active:scale-[0.97]` | klickbare Elemente ohne `active:`; `onClick` auf `div`/`span` |
 | Z2 Doppel-Submit | `if (pending) return; setPending(true)` vor `await`; `useFormStatus`/`useActionState`; Button `disabled={pending}` + Text "Wird gespeichert…" | `onSubmit`/`onClick` mit `await` ohne Pending-Guard |
 | Z5 Undo | `toast("Gelöscht", { action: { label: "Rückgängig", … } })` (sonner) | `confirm(`, `window.confirm`, "Wirklich löschen" |
-| Z8 Hover | `@media (hover: hover) and (pointer: fine)`; Tailwind v4 `hover:` ist bereits so kompiliert | `:hover` außerhalb der Media Query (Tailwind v3 ohne `hoverOnlyWhenSupported`); `group-hover:opacity-100` auf Aktionen |
+| Z8 Hover | `@media (hover: hover) and (pointer: fine)`; Tailwind v4 kompiliert `hover:` bereits hinter `@media (hover: hover)` (ohne `pointer: fine`) | `:hover` außerhalb der Media Query (Tailwind v3 ohne `hoverOnlyWhenSupported`); `group-hover:opacity-100` auf Aktionen |
 | FO1 Label | `<label for>` sichtbar über dem Feld | `placeholder=` ohne zugehöriges `<label>`; `aria-label` statt sichtbarem Label bei Formularfeldern |
 | FO2 Validierung | `onBlur` setzt `touched`, Fehler nur bei `touched`; nach erstem Fehler `onChange` revalidiert. react-hook-form: `mode: "onTouched"` | `mode: "onChange"`/`"all"` ab dem ersten Zeichen; Validierung nur in `onSubmit` |
 | FO3 Fehler | `aria-invalid`, `aria-describedby`, Text mit Lösung | nur `border-red-*` ohne Text |
@@ -104,3 +104,23 @@ Expo Web: Was als `Pressable` gebaut ist, wird ein `div` mit `role="button"`. Ta
 | A3 Semantik | `Semantics(label:, button: true)`, `tooltip:` an `IconButton` | `IconButton` ohne `tooltip`; `GestureDetector` ohne `Semantics` |
 | A5 Ansage | `SemanticsService.announce` (Nachfolger je nach Version prüfen) | — |
 | M7 Reduced Motion | `MediaQuery.disableAnimationsOf(context)` | `AnimationController` ohne Abfrage |
+
+## Stackübergreifend: Suchmuster für Web, Conversion, Retention
+
+Treffer sind Kandidaten, kein Befund; im laufenden Produkt bestätigen.
+
+| Regel | Suchmuster (ripgrep) | Befund, wenn |
+|---|---|---|
+| WD9 | `#000\b\|#000000\|rgb\(0, ?0, ?0\)` neben `#fff\b\|#ffffff\|white` | große Fläche in Reinschwarz mit Text in Reinweiß oder umgekehrt |
+| WD8 | `background-clip: ?text\|bg-clip-text` | Verlaufstext ohne Fallback-Farbe oder unter 4,5:1 an der schwächsten Stelle |
+| WD18 | `<head>` ohne `name="viewport"`; `maximum-scale\|user-scalable=no` | Viewport fehlt bzw. Zoom gesperrt |
+| T4, WD17 | `100vh\|h-screen` | auf Hero, App-Shell oder unten fixierten Elementen |
+| LA2, X6 | `<title>(Home\|Vite\|React App\|Document\|Untitled)` | Platzhaltertitel |
+| WD31, CV3 | `\d+\.\d{2}\b` in Preis-Strings; `€ ?\d`; `toFixed\(2\)` | Preis ohne `Intl.NumberFormat`, Punkt als Dezimaltrenner, € vor dem Betrag |
+| CV1 | Text des Submit im Checkout: `Submit\|Weiter\|Absenden\|Bestellen\b` | zahlungspflichtiger Schritt ohne "zahlungspflichtig bestellen" |
+| CV5, RT16, D4 | `type="checkbox"[^>]*checked\|defaultChecked\|value: ?true` bei Newsletter, Einwilligung, Zusatzleistung | Voreinstellung an |
+| D1, D2 | `Math.random` in Countdown-, Lager-, "viewers"-Komponenten; `setInterval` mit festem Start ohne Server-Enddatum | erfundene Knappheit bzw. Frist |
+| RT8 | `requestPermission\|requestPermissionsAsync\|Notification.requestPermission` im App-Start bzw. Root-Layout | Push-Abfrage vor dem ersten Wertmoment |
+| Z5 | `confirm\(\|Are you sure\|Bist du sicher` | generischer Bestätigungsdialog |
+| M3, M5 | `ease-in[^-]\|transition: ?all\|transition-all` | falsches Easing bzw. alles animiert |
+
